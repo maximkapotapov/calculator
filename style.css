@@ -1,0 +1,23 @@
+.ass-calculator {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: aliceblue;
+    padding: 40px;
+    border: 1px solid black;
+}
+
+.operations-block button {
+    width: 50px;
+    height: 50px;
+    margin: 30px;
+}
+
+.ass-calculator .inputs-block .block {
+    display: inline-block;
+    padding: 10px;
+}
+
+.ass-calculator .inputs-block label {
+    display: block;
+}
