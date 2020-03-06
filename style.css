@@ -1,4 +1,4 @@
-.ass-calculator {
+.web-calculator {
     width: 500px;
     margin: 0 auto;
     text-align: center;
@@ -13,11 +13,11 @@
     margin: 30px;
 }
 
-.ass-calculator .inputs-block .block {
+.web-calculator .inputs-block .block {
     display: inline-block;
     padding: 10px;
 }
 
-.ass-calculator .inputs-block label {
+.web-calculator .inputs-block label {
     display: block;
 }
