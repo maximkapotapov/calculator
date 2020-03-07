@@ -3,52 +3,46 @@ let buttonMinus = document.getElementById("buttonMinus");
 let buttonMultiply = document.getElementById("buttonMultiply");
 let buttonDevide = document.getElementById("buttonDevide");
 
+let input1 = document.getElementById("input1");
+let input2 = document.getElementById("input2");
+
+function getNumber1() {
+    return Number(input1.value);
+}
+
+function getNumber2() {
+    return Number(input2.value);
+}
+
+function operation(operationCode){
+    if (operationCode === '+') {
+        var result = getNumber1() + getNumber2();  
+    } else if (operationCode === '-') {
+        var result = getNumber1() - getNumber2();
+    } else if (operationCode === '*') {
+        var result = getNumber1() * getNumber2();
+    } else if (operationCode === '/') {
+        var result = getNumber1() / getNumber2();
+    } else {
+        window.alert("the operation is unknown");
+    }
+    window.alert(result);
+}
+
 function onbuttonSumClick() {
-    let input1 = document.getElementById("input1");
-    let input2 = document.getElementById("input2");
-
-    let number1 = Number(input1.value);
-    let number2 = Number(input2.value);
-
-    let sum = number1 + number2;
-
-    alert(sum);
+    operation('+');
 }
 
 function onbuttonMinusClick() {
-    let input1 = document.getElementById("input1");
-    let input2 = document.getElementById("input2");
-
-    let number1 = Number(input1.value);
-    let number2 = Number(input2.value);
-
-    let minus = number1 - number2;
-
-    alert(minus);
+    operation('-');
 }
 
 function onbuttonMultiplyClick() {
-    let input1 = document.getElementById("input1");
-    let input2 = document.getElementById("input2");
-
-    let number1 = Number(input1.value);
-    let number2 = Number(input2.value);
-
-    let multiply = number1 * number2;
-
-    alert(multiply);
+    operation('*');
 }
 
 function onbuttonDevideClick() {
-    let input1 = document.getElementById("input1");
-    let input2 = document.getElementById("input2");
-
-    let number1 = Number(input1.value);
-    let number2 = Number(input2.value);
-
-    let devide = number1 / number2;
-
-    alert(devide);
+    operation('/');
 }
 
 buttonSum.addEventListener('click', onbuttonSumClick);
