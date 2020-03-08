@@ -6,46 +6,32 @@ let buttonDevide = document.getElementById("buttonDevide");
 let input1 = document.getElementById("input1");
 let input2 = document.getElementById("input2");
 
-function getNumber1() {
-    return Number(input1.value);
-}
-
-function getNumber2() {
-    return Number(input2.value);
-}
-
 function operation(operationCode){
+    let number1 = Number(input1.value);
+    let number2 = Number(input2.value);
+    
     if (operationCode === '+') {
-        var result = getNumber1() + getNumber2();  
+        var result = number1 + number2;  
     } else if (operationCode === '-') {
-        var result = getNumber1() - getNumber2();
+        var result = number1 - number2;
     } else if (operationCode === '*') {
-        var result = getNumber1() * getNumber2();
+        var result = number1 * number2;
     } else if (operationCode === '/') {
-        var result = getNumber1() / getNumber2();
+        var result = number1 / number2;
     } else {
         window.alert("the operation is unknown");
     }
     window.alert(result);
 }
 
-function onbuttonSumClick() {
-    operation('+');
+function onbuttonOperationClick(eventObject) {
+    let clickElement = eventObject.currentTarget;
+    let makeOperation = clickElement.innerHTML;
+    operation(makeOperation);
 }
 
-function onbuttonMinusClick() {
-    operation('-');
-}
+let buttons = [buttonSum, buttonMinus, buttonMultiply, buttonDevide];
 
-function onbuttonMultiplyClick() {
-    operation('*');
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', onbuttonOperationClick); 
 }
-
-function onbuttonDevideClick() {
-    operation('/');
-}
-
-buttonSum.addEventListener('click', onbuttonSumClick);
-buttonMinus.addEventListener('click', onbuttonMinusClick);
-buttonMultiply.addEventListener('click', onbuttonMultiplyClick);
-buttonDevide.addEventListener('click', onbuttonDevideClick);
